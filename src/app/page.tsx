@@ -5,11 +5,11 @@ import ServiceCard from '@/components/ServiceCard';
 export const metadata: Metadata = {
   title: 'Bimmerworks | BMW Performance Tuning Specialists',
   description:
-    'BMW ECU tuning, coding, remote tunes worldwide. Packages from $190. Done remotely in 20 minutes — no workshop visit required.',
+    'BMW coding, gearbox tunes, remote tunes worldwide. Packages from $190. Done remotely in 20 minutes — no workshop visit required.',
   openGraph: {
     title: 'Bimmerworks | BMW Performance Tuning Specialists',
     description:
-      "Unlock your BMW's true potential with Bimmerworks — specialists in ECU tuning, BMW coding and remote tunes worldwide.",
+      "Unlock your BMW's true potential with Bimmerworks — specialists in BMW coding and remote tunes worldwide.",
     url: 'https://bimmerworks.ro',
   },
 };
@@ -57,10 +57,10 @@ const trustCards = [
 
 const previewServices = [
   {
-    title: 'ECU Stage Tunes',
-    description: 'Stage 1, 2 and 3 remaps tailored to your setup. Unlock power that was always there.',
-    price: 'Contact for Pricing',
-    icon: '⚡',
+    title: 'BMW Coding',
+    description: 'Unlock hidden features, disable Start/Stop, enable video in motion, custom comfort settings and more.',
+    price: 'From ~$80',
+    icon: '💻',
   },
   {
     title: 'Gearbox Tune — G series',
@@ -115,7 +115,7 @@ export default function HomePage() {
             <span className="text-accent">Unlocked.</span>
           </h1>
           <p className="text-gray-300 text-base sm:text-xl md:text-2xl max-w-2xl mx-auto mb-3 sm:mb-4 leading-relaxed px-2">
-            ECU remaps, BMW coding, remote tunes worldwide. We extract every last horsepower — then refine it.
+            BMW coding, gearbox tunes, remote tunes worldwide. We unlock every feature — then refine it.
           </p>
           <p className="text-gray-400 text-sm sm:text-base mb-6 sm:mb-10">
             Packages from <span className="text-white font-semibold">$190</span> — done remotely in <span className="text-white font-semibold">20 minutes</span>. No workshop visit required.
@@ -152,7 +152,7 @@ export default function HomePage() {
             Performance tuning, <span className="text-accent">done right.</span>
           </h2>
           <p className="text-gray-300 text-base sm:text-lg md:text-xl leading-relaxed mb-6 sm:mb-8">
-            Bimmerworks is a BMW-only tuning operation offering ECU stage tunes, gearbox remaps, pops &amp; bangs maps, OPF/GPF delete tunes, and full BMW coding. Can&apos;t visit us? No problem — remote tunes are available worldwide. We also install Apple CarPlay, Android Auto, remote start, and welcome light animations.
+            Bimmerworks is a BMW-only operation offering gearbox remaps, pops &amp; bangs maps, OPF/GPF delete tunes, and full BMW coding. Can&apos;t visit us? No problem — remote tunes are available worldwide. We also install Apple CarPlay, Android Auto, remote start, and welcome light animations.
           </p>
           <p className="text-muted text-sm sm:text-base md:text-lg">Every car is different. Every tune is custom.</p>
         </div>
