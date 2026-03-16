@@ -27,7 +27,6 @@ export default function ContactPage() {
     'XM Red Label Tune — G09 ($400)',
     'M3 / M4 CS Tune Pack — G80 / G82 ($400)',
     'Navigation Region Change — iDrive 7/8 ($220)',
-    'ECU Stage Tunes (Stage 1, 2, 3)',
     'BMW Coding',
     'Apple CarPlay / Android Auto',
     'Remote Start',
