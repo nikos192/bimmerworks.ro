@@ -39,18 +39,24 @@ export default function Navbar() {
         </Link>
 
         {/* Desktop nav */}
-        <nav className="hidden md:flex items-center gap-8">
+        <nav className="hidden md:flex items-center gap-1">
           {links.map(({ href, label }) => (
             <Link
               key={href}
               href={href}
-              className={`text-sm font-medium transition-colors ${
-                pathname === href ? 'text-white' : 'text-muted hover:text-white'
+              className={`relative text-sm font-medium px-4 py-2 rounded-lg transition-colors ${
+                pathname === href
+                  ? 'text-white bg-white/5'
+                  : 'text-gray-400 hover:text-white hover:bg-white/5'
               }`}
             >
               {label}
+              {pathname === href && (
+                <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-4 h-0.5 rounded-full bg-accent" />
+              )}
             </Link>
           ))}
+          <div className="w-px h-5 bg-white/10 mx-3" />
           <a
             href="https://wa.me/40757226101"
             target="_blank"
