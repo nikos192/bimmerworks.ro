@@ -17,11 +17,16 @@ export default function ContactPage() {
   });
 
   const services = [
+    // Priced packages
+    'Pops & Bangs Tune — G series ($300)',
+    'GPF / OPF Delete Tune — Gxx / F8x ($200)',
+    'Gearbox Tune Stage 2/3 — F series ($190)',
+    'Gearbox Tune Stage 2/3 — G series ($280)',
+    'XM Red Label Tune — G09 ($400)',
+    'M3 / M4 CS Tune Pack — G80 / G82 ($400)',
+    'Navigation Region Change — iDrive 7/8 ($220)',
+    // Contact for pricing
     'ECU Stage Tunes (Stage 1, 2, 3)',
-    'Gearbox Tunes',
-    'Pops & Bangs / Burbles',
-    'OPF/GPF Delete Tune',
-    'Remote Tunes (Worldwide)',
     'BMW Coding',
     'Apple CarPlay / Android Auto',
     'Remote Start',
@@ -49,9 +54,7 @@ export default function ContactPage() {
       {/* ── HEADER ── */}
       <section
         className="pt-32 pb-16 px-4 text-center carbon-texture"
-        style={{
-          background: 'linear-gradient(180deg, #0a0a0a 0%, #0d1a33 100%)',
-        }}
+        style={{ background: 'linear-gradient(180deg, #0a0a0a 0%, #0d1a33 100%)' }}
       >
         <p className="text-accent uppercase tracking-[0.3em] text-sm font-semibold mb-4">
           Get In Touch
@@ -60,7 +63,7 @@ export default function ContactPage() {
           Book Your <span className="text-accent">Tune</span>
         </h1>
         <p className="text-gray-300 text-lg sm:text-xl max-w-2xl mx-auto">
-          Get in touch — remote tunes available worldwide.
+          Remote tunes available worldwide — tell us about your BMW and we&apos;ll take it from there.
         </p>
       </section>
 
@@ -140,7 +143,7 @@ export default function ContactPage() {
                     required
                     value={form.car}
                     onChange={handleChange}
-                    placeholder="e.g. BMW M3 F80 2017"
+                    placeholder="e.g. BMW M3 G80 2022"
                     className={inputClass}
                   />
                 </div>
@@ -158,9 +161,16 @@ export default function ContactPage() {
                     className={inputClass + ' cursor-pointer'}
                   >
                     <option value="" disabled>Select a service</option>
-                    {services.map((s) => (
-                      <option key={s} value={s} className="bg-card-bg">{s}</option>
-                    ))}
+                    <optgroup label="── Fixed Price Packages ──">
+                      {services.slice(0, 7).map((s) => (
+                        <option key={s} value={s} className="bg-card-bg">{s}</option>
+                      ))}
+                    </optgroup>
+                    <optgroup label="── Contact for Pricing ──">
+                      {services.slice(7).map((s) => (
+                        <option key={s} value={s} className="bg-card-bg">{s}</option>
+                      ))}
+                    </optgroup>
                   </select>
                 </div>
 
@@ -198,8 +208,27 @@ export default function ContactPage() {
               <div className="text-2xl mb-3">🌍</div>
               <h3 className="font-bold text-lg mb-2">Remote Tunes Available Worldwide</h3>
               <p className="text-muted text-sm leading-relaxed">
-                You don&apos;t need to be local. Our remote tune process works with any BMW via a compatible OBD interface. We&apos;ll guide you through every step.
+                You don&apos;t need to be local. Our remote tune process works with any BMW via a compatible OBD interface and AnyDesk. We&apos;ll guide you through every step.
               </p>
+            </div>
+
+            {/* What you need */}
+            <div className="bg-card-bg border border-card-border rounded-xl p-6">
+              <div className="text-2xl mb-3">🛠️</div>
+              <h3 className="font-bold text-lg mb-3">What You&apos;ll Need</h3>
+              <ul className="space-y-2 text-sm text-gray-400">
+                {[
+                  'ENET Cable (OBD2 to Ethernet)',
+                  'Windows PC or macOS',
+                  'AnyDesk (free — anydesk.com)',
+                  'Stable internet connection',
+                ].map((item) => (
+                  <li key={item} className="flex items-center gap-2">
+                    <span className="text-accent">▸</span> {item}
+                  </li>
+                ))}
+              </ul>
+              <p className="text-muted text-xs mt-4">Sessions typically take 10–20 minutes.</p>
             </div>
 
             {/* Business info */}
