@@ -3,7 +3,7 @@ import Link from 'next/link';
 const WHATSAPP_URL = 'https://wa.me/40757226101';
 
 export default function Footer() {
-  const currentYear = 2025;
+  const currentYear = 2026;
 
   return (
     <footer className="bg-background border-t border-card-border">
