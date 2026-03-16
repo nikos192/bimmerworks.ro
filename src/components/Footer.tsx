@@ -42,6 +42,7 @@ export default function Footer() {
               <Link href="/" className="text-muted hover:text-white text-sm transition-colors">Home</Link>
               <Link href="/services" className="text-muted hover:text-white text-sm transition-colors">Services</Link>
               <Link href="/contact" className="text-muted hover:text-white text-sm transition-colors">Contact</Link>
+              <Link href="/terms" className="text-muted hover:text-white text-sm transition-colors">Terms &amp; Conditions</Link>
             </div>
           </div>
 
@@ -117,9 +118,9 @@ export default function Footer() {
           <p className="text-muted text-sm">
             &copy; {currentYear} Bimmerworks.ro. All rights reserved.
           </p>
-          <p className="text-muted text-xs">
-            BMW Performance Specialists — Remote Tunes Worldwide
-          </p>
+          <Link href="/terms" className="text-muted hover:text-white text-xs transition-colors">
+            Terms &amp; Conditions
+          </Link>
         </div>
       </div>
     </footer>
