@@ -1,6 +1,5 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import PayPalButton from '@/components/PayPalButton';
 
 export const metadata: Metadata = {
   title: 'BMW Tuning Services & Pricing',
@@ -12,9 +11,6 @@ export const metadata: Metadata = {
     url: 'https://bimmerworks.ro/services',
   },
 };
-
-// TODO: Replace with your real PayPal client ID before going live
-const PAYPAL_CLIENT_ID = 'YOUR_PAYPAL_CLIENT_ID_HERE';
 
 const pricedServices = [
   {
@@ -152,7 +148,6 @@ export default function ServicesPage() {
           Performance upgrades for your BMW — from gearbox tunes to full BMW coding.
           Every service is delivered <strong className="text-white">100% remotely</strong>, worldwide.
         </p>
-        {/* Trust badges */}
         <div className="flex flex-wrap justify-center gap-3 mb-6">
           {['No warranty void', 'No dealer flag', 'All OEM software', 'Remote worldwide', 'Done in 20 min'].map((b) => (
             <span key={b} className="text-xs text-gray-300 bg-white/5 border border-white/10 rounded-full px-3 py-1">✓ {b}</span>
@@ -169,7 +164,7 @@ export default function ServicesPage() {
           <h2 className="text-2xl sm:text-3xl font-bold mb-2 text-center">
             Packages with <span className="text-accent">Fixed Pricing</span>
           </h2>
-          <p className="text-muted text-center mb-12">Purchase online or get in touch to book.</p>
+          <p className="text-muted text-center mb-12">Get in touch to book your session.</p>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {pricedServices.map((svc) => (
               <div key={svc.title}
@@ -245,33 +240,13 @@ export default function ServicesPage() {
             ))}
           </div>
           <p className="text-center text-muted text-xs mt-4">
-            Process takes roughly 20 minutes. Purchase → we email you a booking link → our technician connects remotely.
+            Sessions take roughly 20 minutes. Contact us → we confirm your booking slot → our technician connects remotely.
           </p>
         </div>
       </section>
 
-      {/* ── PAYPAL SECTION ── */}
-      <section className="py-20 px-4 bg-section-bg">
-        <div className="max-w-xl mx-auto text-center">
-          <div className="bg-card-bg border border-card-border rounded-2xl p-10">
-            <div className="text-4xl mb-4">💳</div>
-            <h2 className="text-2xl sm:text-3xl font-bold mb-3">Pay Online — Secure Checkout</h2>
-            <p className="text-muted mb-2">Secure checkout via PayPal</p>
-            <p className="text-gray-400 text-sm mb-8">
-              Contact us first to confirm your package, then pay securely online before your booking slot.
-            </p>
-            <PayPalButton clientId={PAYPAL_CLIENT_ID} />
-            <p className="text-muted text-xs mt-6">
-              {/* TODO: Swap PAYPAL_CLIENT_ID constant at the top of this file to go live */}
-              Swap <code className="text-accent">PAYPAL_CLIENT_ID</code> in{' '}
-              <code className="text-accent">services/page.tsx</code> to activate live payments.
-            </p>
-          </div>
-        </div>
-      </section>
-
       {/* ── FAQ ── */}
-      <section className="py-20 px-4 bg-background">
+      <section className="py-20 px-4 bg-section-bg">
         <div className="max-w-3xl mx-auto">
           <h2 className="text-2xl sm:text-3xl font-bold text-center mb-4">
             Frequently Asked <span className="text-accent">Questions</span>
@@ -289,10 +264,10 @@ export default function ServicesPage() {
       </section>
 
       {/* ── BOTTOM CTA ── */}
-      <section className="py-16 px-4 bg-section-bg">
+      <section className="py-16 px-4 bg-background">
         <div className="max-w-3xl mx-auto text-center">
-          <h3 className="text-2xl sm:text-3xl font-bold mb-4">Still have questions?</h3>
-          <p className="text-muted mb-8 text-lg">Message us on WhatsApp — we reply same day.</p>
+          <h3 className="text-2xl sm:text-3xl font-bold mb-4">Ready to book?</h3>
+          <p className="text-muted mb-8 text-lg">Message us on WhatsApp or send a message — we reply same day.</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a href="https://wa.me/40757226101" target="_blank" rel="noopener noreferrer"
               className="inline-flex items-center justify-center gap-2 text-white font-bold px-8 py-4 rounded-lg transition-all duration-200 hover:scale-105 text-lg"
