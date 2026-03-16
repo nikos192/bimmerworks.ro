@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #0a0a0a;
+  --foreground: #ffffff;
+  --accent: #0066FF;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: 'Inter', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Carbon fibre texture utility */
+.carbon-texture {
+  background-image:
+    repeating-linear-gradient(
+      45deg,
+      transparent,
+      transparent 2px,
+      rgba(255, 255, 255, 0.015) 2px,
+      rgba(255, 255, 255, 0.015) 4px
+    ),
+    repeating-linear-gradient(
+      -45deg,
+      transparent,
+      transparent 2px,
+      rgba(255, 255, 255, 0.015) 2px,
+      rgba(255, 255, 255, 0.015) 4px
+    );
+}
+
+/* Accent glow utility */
+.accent-glow {
+  box-shadow: 0 0 24px rgba(0, 102, 255, 0.3);
+}
+
+/* Section fade-in animation delay helpers */
+.delay-100 { animation-delay: 100ms; }
+.delay-200 { animation-delay: 200ms; }
+.delay-300 { animation-delay: 300ms; }
+.delay-400 { animation-delay: 400ms; }
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #0a0a0a;
+}
+::-webkit-scrollbar-thumb {
+  background: #0066FF;
+  border-radius: 3px;
+}
