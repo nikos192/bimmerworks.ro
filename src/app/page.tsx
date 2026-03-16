@@ -106,27 +106,17 @@ export default function HomePage() {
           className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] sm:w-[600px] h-[400px] sm:h-[600px] rounded-full pointer-events-none"
           style={{ background: 'radial-gradient(circle, rgba(0,102,255,0.12) 0%, transparent 70%)' }}
         />
-        <div className="relative z-10 text-center px-4 max-w-4xl mx-auto w-full">
+        <div className="relative z-10 text-center px-4 max-w-3xl mx-auto w-full">
           <p className="text-accent uppercase tracking-[0.2em] sm:tracking-[0.3em] text-xs sm:text-sm font-semibold mb-4 sm:mb-6">
             BMW Performance Tuning
           </p>
-          <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-black tracking-tight mb-4 sm:mb-6 leading-tight">
+          <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-black tracking-tight mb-6 sm:mb-8 leading-tight">
             Your BMW.<br />
             <span className="text-accent">Unlocked.</span>
           </h1>
-          <p className="text-gray-300 text-base sm:text-xl md:text-2xl max-w-2xl mx-auto mb-3 sm:mb-4 leading-relaxed px-2">
-            BMW coding, gearbox tunes, remote tunes worldwide. We unlock every feature — then refine it.
+          <p className="text-gray-400 text-base sm:text-xl max-w-xl mx-auto mb-8 sm:mb-12 leading-relaxed">
+            BMW coding &amp; remote tunes — done from home, worldwide, from <span className="text-white font-semibold">$190</span>.
           </p>
-          <p className="text-gray-400 text-sm sm:text-base mb-6 sm:mb-10">
-            Packages from <span className="text-white font-semibold">$190</span> — done remotely in <span className="text-white font-semibold">20 minutes</span>. No workshop visit required.
-          </p>
-          <div className="flex flex-wrap justify-center gap-2 sm:gap-3 mb-6 sm:mb-10 px-2">
-            {['No warranty void', 'No dealer flag', 'All OEM software', 'Remote worldwide'].map((badge) => (
-              <span key={badge} className="text-xs text-gray-300 bg-white/5 border border-white/10 rounded-full px-3 py-1">
-                ✓ {badge}
-              </span>
-            ))}
-          </div>
           <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center px-4 sm:px-0">
             <Link href="/services"
               className="inline-block bg-accent hover:bg-accent-hover text-white font-bold px-8 py-4 rounded-lg transition-all duration-200 accent-glow hover:scale-105 text-base sm:text-lg text-center">
