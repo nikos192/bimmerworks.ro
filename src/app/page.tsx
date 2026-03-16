@@ -98,27 +98,14 @@ export default function HomePage() {
   return (
     <>
       {/* ── HERO ── */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-        {/* Banner background image */}
-        <div
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{ backgroundImage: "url('/banner.jpg')" }}
-        />
-        {/* Dark overlay — heavier at top/bottom for text legibility */}
-        <div
-          className="absolute inset-0"
-          style={{
-            background: 'linear-gradient(180deg, rgba(10,10,10,0.85) 0%, rgba(10,10,10,0.65) 40%, rgba(10,10,10,0.80) 100%)',
-          }}
-        />
-        {/* Blue accent glow */}
+      <section
+        className="relative min-h-screen flex items-center justify-center carbon-texture overflow-hidden"
+        style={{ background: 'linear-gradient(135deg, #0a0a0a 0%, #0d1a33 50%, #0a0a0a 100%)' }}
+      >
         <div
           className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] sm:w-[600px] h-[400px] sm:h-[600px] rounded-full pointer-events-none"
-          style={{ background: 'radial-gradient(circle, rgba(0,102,255,0.10) 0%, transparent 70%)' }}
+          style={{ background: 'radial-gradient(circle, rgba(0,102,255,0.12) 0%, transparent 70%)' }}
         />
-        {/* Carbon texture overlay */}
-        <div className="absolute inset-0 carbon-texture opacity-40" />
-
         <div className="relative z-10 text-center px-4 max-w-4xl mx-auto w-full">
           <p className="text-accent uppercase tracking-[0.2em] sm:tracking-[0.3em] text-xs sm:text-sm font-semibold mb-4 sm:mb-6">
             BMW Performance Tuning
@@ -127,17 +114,15 @@ export default function HomePage() {
             Your BMW.<br />
             <span className="text-accent">Unlocked.</span>
           </h1>
-          <p className="text-gray-200 text-base sm:text-xl md:text-2xl max-w-2xl mx-auto mb-3 sm:mb-4 leading-relaxed px-2">
+          <p className="text-gray-300 text-base sm:text-xl md:text-2xl max-w-2xl mx-auto mb-3 sm:mb-4 leading-relaxed px-2">
             ECU remaps, BMW coding, remote tunes worldwide. We extract every last horsepower — then refine it.
           </p>
-          {/* Price anchor */}
           <p className="text-gray-400 text-sm sm:text-base mb-6 sm:mb-10">
             Packages from <span className="text-white font-semibold">$190</span> — done remotely in <span className="text-white font-semibold">20 minutes</span>. No workshop visit required.
           </p>
-          {/* Trust badges */}
           <div className="flex flex-wrap justify-center gap-2 sm:gap-3 mb-6 sm:mb-10 px-2">
             {['No warranty void', 'No dealer flag', 'All OEM software', 'Remote worldwide'].map((badge) => (
-              <span key={badge} className="text-xs text-gray-300 bg-black/40 border border-white/15 rounded-full px-3 py-1 backdrop-blur-sm">
+              <span key={badge} className="text-xs text-gray-300 bg-white/5 border border-white/10 rounded-full px-3 py-1">
                 ✓ {badge}
               </span>
             ))}
@@ -148,14 +133,13 @@ export default function HomePage() {
               View Services
             </Link>
             <Link href="/contact"
-              className="inline-block border border-white/30 hover:border-accent text-white font-bold px-8 py-4 rounded-lg transition-all duration-200 hover:bg-white/5 text-base sm:text-lg text-center backdrop-blur-sm">
+              className="inline-block border border-white/20 hover:border-accent text-white font-bold px-8 py-4 rounded-lg transition-all duration-200 hover:bg-white/5 text-base sm:text-lg text-center">
               Get In Touch
             </Link>
           </div>
         </div>
-
         <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" className="text-white/40">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" className="text-white/30">
             <path d="M12 5v14M5 12l7 7 7-7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
           </svg>
         </div>
