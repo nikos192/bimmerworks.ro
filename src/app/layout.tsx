@@ -1,56 +1,52 @@
 import type { Metadata } from 'next';
+import { Inter } from 'next/font/google';
 import './globals.css';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import FloatingWhatsApp from '@/components/FloatingWhatsApp';
+
+const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
   title: {
     default: 'Bimmerworks | BMW Performance Tuning Specialists',
-    template: '%s | Bimmerworks',
+    template: '%s | Bimmerworks.ro',
   },
   description:
-    'Bimmerworks — BMW ECU tuning, coding, remote tunes, CarPlay installs and performance upgrades. Remote tunes available worldwide.',
-  keywords: [
-    'BMW tuning',
-    'ECU remap',
-    'BMW coding',
-    'stage 1 tune',
-    'stage 2 tune',
-    'remote tune',
-    'pops and bangs',
-    'BMW performance',
-    'Bimmerworks',
-    'Romania BMW tuning',
-  ],
+    'BMW ECU tuning, coding, remote tunes worldwide. Packages from $190. Remote sessions take 20 minutes — no workshop visit required.',
   openGraph: {
     title: 'Bimmerworks | BMW Performance Tuning Specialists',
     description:
-      "BMW ECU tuning, coding, remote tunes and more. Specialists in unlocking your BMW's true potential.",
+      "Unlock your BMW's true potential — ECU remaps, gearbox tunes, pops & bangs, coding and more. Remote worldwide.",
     url: 'https://bimmerworks.ro',
-    siteName: 'Bimmerworks',
+    siteName: 'Bimmerworks.ro',
+    images: [
+      {
+        url: 'https://bimmerworks.ro/og-image.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Bimmerworks — BMW Performance Tuning',
+      },
+    ],
     locale: 'en_US',
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Bimmerworks | BMW Performance Tuning Specialists',
-    description:
-      'BMW ECU tuning, coding, remote tunes and more.',
+    title: 'Bimmerworks | BMW Performance Tuning',
+    description: 'BMW ECU tuning, coding & remote tunes worldwide. Packages from $190.',
+    images: ['https://bimmerworks.ro/og-image.jpg'],
   },
-  metadataBase: new URL('https://bimmerworks.ro'),
 };
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body className="bg-background text-white font-sans">
+      <body className={inter.className}>
         <Navbar />
         <main>{children}</main>
         <Footer />
+        <FloatingWhatsApp />
       </body>
     </html>
   );
