@@ -107,28 +107,32 @@ const contactServices = [
 
 const faqs = [
   {
-    q: 'Will this void my BMW warranty?',
-    a: 'No. All our tunes use OEM software modifications only — there is no hardware modification and nothing that flags at a dealer service. Your warranty remains intact.',
+    q: 'How long does a coding session take?',
+    a: 'Most coding sessions take 10–15 minutes, depending on the number of services requested. More complex modifications may require additional time.',
   },
   {
-    q: 'Do I need to bring my car anywhere?',
-    a: 'No. Every service is 100% remote. You connect from home using an ENET cable, a Windows PC or Mac, and AnyDesk. We do the rest.',
+    q: 'How can I check availability before booking?',
+    a: 'DM us on WhatsApp to set up an appointment with Bimmerworks.ro. We reply same day.',
   },
   {
-    q: 'How long does a remote session take?',
-    a: 'Most sessions are done in 10–20 minutes. You book a slot, we connect remotely, perform the tune, and you\'re done.',
+    q: 'What equipment do I need?',
+    a: "You'll need a Windows PC, an ENET OBD cable, and a stable internet connection. See the 'What You'll Need' section above for full requirements.",
   },
   {
-    q: 'What if something goes wrong during the tune?',
-    a: 'Our technicians have performed hundreds of remote sessions. In the unlikely event of an issue, we stay connected until it\'s resolved. We do not end a session until your car is running correctly.',
+    q: 'Is remote coding safe for my vehicle?',
+    a: 'Yes. Our technicians use real-time vehicle monitoring and safety checks throughout every session. We use BMW OEM coding methods and create backups before making any changes.',
   },
   {
-    q: 'Is my car compatible?',
-    a: 'Most BMW G series and F series models are supported. Check the compatibility notes on each service card, or message us on WhatsApp with your exact model and we\'ll confirm instantly.',
+    q: 'Does coding void my warranty?',
+    a: 'All coding and software applied by Bimmerworks.ro is 100% OEM, applied using BMW OEM factory software. Coding does not void your warranty, and all changes are fully reversible.',
   },
   {
-    q: 'Can I reverse the tune?',
-    a: 'Yes. We retain the original stock file and can restore your car to factory settings at any time.',
+    q: 'Do you offer support after the coding session?',
+    a: "Yes. We provide ongoing support for all our coding services. If you experience any issues, reach out via WhatsApp or email and we'll assist you.",
+  },
+  {
+    q: 'Where are you located?',
+    a: 'We are based in Romania and all coding services are performed remotely from Romania — available worldwide.',
   },
 ];
 
@@ -240,7 +244,7 @@ export default function ServicesPage() {
             ))}
           </div>
           <p className="text-center text-muted text-xs mt-4">
-            Sessions take roughly 20 minutes. Contact us → we confirm your booking slot → our technician connects remotely.
+            Sessions take roughly 10–15 minutes. Contact us → we confirm your booking slot → our technician connects remotely.
           </p>
         </div>
       </section>
@@ -260,6 +264,10 @@ export default function ServicesPage() {
               </div>
             ))}
           </div>
+          <p className="text-center text-muted text-sm mt-8">
+            More questions?{' '}
+            <Link href="/faq" className="text-accent hover:underline">Visit our FAQ page →</Link>
+          </p>
         </div>
       </section>
 
