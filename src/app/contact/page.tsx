@@ -3,7 +3,6 @@
 import { useState } from 'react';
 
 // TODO: Add business address here
-// TODO: Add business email here
 
 export default function ContactPage() {
   const [submitted, setSubmitted] = useState(false);
@@ -233,12 +232,15 @@ export default function ContactPage() {
 
             {/* Business info */}
             <div className="bg-card-bg border border-card-border rounded-xl p-6">
-              <div className="text-2xl mb-3">📍</div>
-              <h3 className="font-bold text-lg mb-2">Find Us</h3>
+              <div className="text-2xl mb-3">📬</div>
+              <h3 className="font-bold text-lg mb-3">Email Us</h3>
+              <a
+                href="mailto:bimmerworks.ro@gmail.com"
+                className="text-accent hover:text-white transition-colors text-sm font-medium"
+              >
+                bimmerworks.ro@gmail.com
+              </a>
               {/* TODO: Add business address */}
-              <p className="text-muted text-sm mb-3">Address coming soon.</p>
-              {/* TODO: Add business email */}
-              <p className="text-muted text-sm">Email coming soon.</p>
             </div>
 
             {/* Prefer to DM */}
