@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 
 export default function Navbar() {
@@ -34,8 +35,14 @@ export default function Navbar() {
       <div className="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
         {/* Logo */}
         <Link href="/" className="flex items-center">
-          <span className="text-white font-black text-lg tracking-tight">BIMMER</span>
-          <span className="text-accent font-black text-lg tracking-tight">WORKS</span>
+          <Image
+            src="/logo.png"
+            alt="Bimmerworks"
+            width={180}
+            height={54}
+            className="h-9 w-auto object-contain"
+            priority
+          />
         </Link>
 
         {/* Desktop nav */}
