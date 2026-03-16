@@ -12,10 +12,9 @@ export default function Footer() {
 
           {/* Brand */}
           <div>
-            <div className="flex items-center gap-1 mb-3">
+            <div className="flex items-center mb-3">
               <span className="text-white font-black text-xl tracking-tight">BIMMER</span>
               <span className="text-accent font-black text-xl tracking-tight">WORKS</span>
-              <span className="text-accent font-black text-2xl ml-0.5 leading-none">.</span>
             </div>
             <p className="text-muted text-sm leading-relaxed">BMW Performance Specialists</p>
             <p className="text-muted text-sm leading-relaxed mt-1">ECU tuning, coding, remote tunes worldwide.</p>
