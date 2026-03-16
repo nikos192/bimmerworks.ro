@@ -12,6 +12,8 @@
 
 html {
   scroll-behavior: smooth;
+  /* Prevent horizontal overflow on mobile */
+  overflow-x: hidden;
 }
 
 body {
@@ -20,9 +22,36 @@ body {
   font-family: 'Inter', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  /* Prevent horizontal scroll on mobile */
+  overflow-x: hidden;
+  /* Support safe areas (notch, home bar) */
+  padding-bottom: env(safe-area-inset-bottom);
 }
 
-/* Carbon fibre texture utility */
+/* ── Mobile touch targets — minimum 44px ── */
+button,
+a[href],
+[role="button"] {
+  min-height: 44px;
+  min-width: 44px;
+}
+
+/* ── Prevent iOS font size bump on landscape ── */
+@media screen and (max-width: 768px) {
+  html {
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+  }
+}
+
+/* ── Prevent iOS zoom on input focus (requires font-size >= 16px) ── */
+input,
+select,
+textarea {
+  font-size: 16px !important;
+}
+
+/* ── Carbon fibre texture utility ── */
 .carbon-texture {
   background-image:
     repeating-linear-gradient(
@@ -41,25 +70,25 @@ body {
     );
 }
 
-/* Accent glow utility */
+/* ── Accent glow utility ── */
 .accent-glow {
   box-shadow: 0 0 24px rgba(0, 102, 255, 0.3);
 }
 
-/* Section fade-in animation delay helpers */
+/* ── Section fade-in animation delay helpers ── */
 .delay-100 { animation-delay: 100ms; }
 .delay-200 { animation-delay: 200ms; }
 .delay-300 { animation-delay: 300ms; }
 .delay-400 { animation-delay: 400ms; }
 
-/* Custom scrollbar */
-::-webkit-scrollbar {
-  width: 6px;
+/* ── Custom scrollbar (desktop only) ── */
+@media (min-width: 768px) {
+  ::-webkit-scrollbar { width: 6px; }
+  ::-webkit-scrollbar-track { background: #0a0a0a; }
+  ::-webkit-scrollbar-thumb { background: #0066FF; border-radius: 3px; }
 }
-::-webkit-scrollbar-track {
-  background: #0a0a0a;
-}
-::-webkit-scrollbar-thumb {
-  background: #0066FF;
-  border-radius: 3px;
+
+/* ── Floating WhatsApp — clear of iOS home indicator ── */
+.whatsapp-float {
+  bottom: calc(1.5rem + env(safe-area-inset-bottom));
 }
