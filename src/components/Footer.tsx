@@ -21,8 +21,13 @@ export default function Footer() {
             <p className="text-muted text-sm leading-relaxed mt-2">
               ECU tuning, coding, remote tunes worldwide.
             </p>
+            <a
+              href="mailto:bimmerworks.ro@gmail.com"
+              className="inline-block text-sm text-gray-400 hover:text-accent transition-colors mt-3"
+            >
+              bimmerworks.ro@gmail.com
+            </a>
             {/* TODO: Add business address */}
-            {/* TODO: Add business email */}
           </div>
 
           {/* Navigation */}
