@@ -5,7 +5,7 @@ import PayPalButton from '@/components/PayPalButton';
 export const metadata: Metadata = {
   title: 'BMW Tuning Services & Pricing',
   description:
-    'BMW ECU stage tunes, gearbox tunes, pops & bangs, OPF/GPF delete, CS tune packs, XM Red Label tunes, BMW coding, CarPlay installs and more. All done remotely — packages from $190.',
+    'BMW gearbox tunes, pops & bangs, OPF/GPF delete, CS tune packs, XM Red Label tunes, BMW coding, CarPlay installs and more. All done remotely — packages from $190.',
   openGraph: {
     title: 'BMW Tuning Services & Pricing | Bimmerworks.ro',
     description: 'Full range of BMW performance upgrades — all done remotely worldwide. Real prices, real results.',
@@ -84,12 +84,6 @@ const pricedServices = [
 
 const contactServices = [
   {
-    icon: '⚡',
-    title: 'ECU Stage Tunes (Stage 1 · 2 · 3)',
-    priceRange: 'Contact for Pricing',
-    description: 'Custom ECU remaps for a wide range of BMW engines. Stage 1 on stock hardware, Stage 2 with hardware mods, Stage 3 for full build support.',
-  },
-  {
     icon: '💻',
     title: 'BMW Coding',
     priceRange: 'From ~$80',
@@ -138,7 +132,7 @@ const faqs = [
   },
   {
     q: 'Can I reverse the tune?',
-    a: 'Yes. We retain the original stock file and can restore your ECU to factory settings at any time.',
+    a: 'Yes. We retain the original stock file and can restore your car to factory settings at any time.',
   },
 ];
 
@@ -155,7 +149,7 @@ export default function ServicesPage() {
           What We <span className="text-accent">Do</span>
         </h1>
         <p className="text-gray-300 text-lg sm:text-xl max-w-2xl mx-auto mb-6">
-          Performance upgrades for your BMW — from stage tunes to custom coding.
+          Performance upgrades for your BMW — from gearbox tunes to full BMW coding.
           Every service is delivered <strong className="text-white">100% remotely</strong>, worldwide.
         </p>
         {/* Trust badges */}
@@ -218,7 +212,7 @@ export default function ServicesPage() {
             More <span className="text-accent">Services</span>
           </h2>
           <p className="text-muted text-center mb-12">Get in touch for a quote tailored to your BMW.</p>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {contactServices.map((svc) => (
               <div key={svc.title}
                 className="bg-card-bg border border-card-border rounded-xl p-6 hover:border-accent/40 transition-all duration-300 hover:-translate-y-1 flex flex-col">
