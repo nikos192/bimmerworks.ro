@@ -38,9 +38,9 @@ export default function Navbar() {
           <Image
             src="/logo.png"
             alt="Bimmerworks"
-            width={180}
-            height={54}
-            className="h-9 w-auto object-contain"
+            width={220}
+            height={66}
+            className="h-12 w-auto object-contain"
             priority
           />
         </Link>
