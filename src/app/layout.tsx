@@ -22,9 +22,9 @@ export const metadata: Metadata = {
     siteName: 'Bimmerworks.ro',
     images: [
       {
-        url: 'https://bimmerworks.ro/og-image.jpg',
-        width: 1200,
-        height: 630,
+        url: 'https://bimmerworks.ro/profile-pic.jpg',
+        width: 1080,
+        height: 1080,
         alt: 'Bimmerworks — BMW Performance Tuning',
       },
     ],
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Bimmerworks | BMW Performance Tuning',
     description: 'BMW ECU tuning, coding & remote tunes worldwide. Packages from $190.',
-    images: ['https://bimmerworks.ro/og-image.jpg'],
+    images: ['https://bimmerworks.ro/profile-pic.jpg'],
   },
 };
 
