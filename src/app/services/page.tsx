@@ -105,6 +105,70 @@ const contactServices = [
   },
 ];
 
+const gSeriesCodingOptions = [
+  'Ambient lights new colours',
+  'Turn off Horn on Secure Feature when Locking with Engine Running',
+  'Comfort +',
+  'Sport +',
+  'EcoPro +',
+  'Fold mirrors with warning lights on',
+  'Instrument cluster: M Performance / M Power / Alpina',
+  'Increase refresh rate',
+  'Motorsport M logo display',
+  'Auto Start/Stop Memory',
+  'Sunroof automatic close after 6 hours',
+  'Sunroof automatic close when sensor detects water/rain',
+  'M Dynamic DSC Mode',
+  'Tyre temperature and pressure display in Instrument Cluster',
+  'Bowers & Wilkins Signature Audio sound 3D',
+  'M logo display iDrive boot',
+  'Macro Trailer camera zoom',
+  'Sport Individual — adjustment dampers',
+  'Voice commands: activate cruise control, open windows, change temperature',
+  'Sailing mode in Eco Pro',
+  'Air Condition setting for cooler air summer time',
+  'Disable Legal disclaimer',
+  'Start car in Eco Pro or Sport Driving Mode',
+  'Turn off Lights on the Off / 0 Position',
+  'Enable Windows to Close when Doors are Open',
+  'Change Sport Theme from Red to Grey',
+  'Fuel suggestion stop',
+  'Automatic time setup online',
+  'Daytime running lights option in iDrive',
+  'Turn off completely daytime running lights',
+  '5-times turn signal flash 1 touch press',
+  'Enable After blow climate — after engine off can press auto button for 40 seconds air blow',
+  'Tailgate / boot close 1 touch',
+  'Tailgate warning sounds open / close',
+  'Enable Traffic Light assist',
+  'Enable Automatic Lane change assistant',
+  'Enable Speed limit assistant',
+  'Enable Emergency Lane formation',
+  'Enable Narrow road warning',
+  'Enable driver attention camera option disable',
+  'Enable rear DRL option',
+  'Valet trunk close option',
+  'Control Exhaust Valves from iDrive',
+  'Enable Shift lights M Performance style',
+  'Reverse angle mirror fix passenger side from 90° to 45°',
+  'Disable seatbelt warning',
+  'Enable auto steering wheel heating',
+  'Enable instrument cluster dimming fix daytime (common issue from window tints)',
+  'M logo display on display keys',
+  'Enable Anti-Dazzle headlights',
+  'Brake force flash display flickering',
+  'Disable Active Sound Design (Artificial Engine Sound)',
+  'Enable Remember A/C Compressor Off Mode',
+  'Change default driving mode: EcoPro, Adaptive, Comfort, Sport, Sport+',
+  'Activate Warning Sounds when putting gearbox in R',
+  'Change fuel alarm when left 8 / 12 / 13 litres / gallons',
+  'Change dashboard highlight — more visible 50%',
+  'When press P button doors automatic unlocking',
+  'Change Warning Chimes / PDC Sounds to BMW / Mini / Rolls Royce / BMW I',
+  'Change Default Distance on Adaptive Cruise Control',
+  'Setting the GONG sound when saving the seat position',
+];
+
 const faqs = [
   {
     q: 'How long does a coding session take?',
@@ -230,8 +294,41 @@ export default function ServicesPage() {
         </div>
       </section>
 
+      {/* ── G-SERIES CODING OPTIONS ── */}
+      <section className="py-20 px-4 bg-background">
+        <div className="max-w-5xl mx-auto">
+          <p className="text-accent uppercase tracking-[0.3em] text-xs font-semibold text-center mb-3">BMW Coding</p>
+          <h2 className="text-2xl sm:text-3xl font-bold mb-2 text-center">
+            G-Series Coding <span className="text-accent">Options</span>
+          </h2>
+          <p className="text-muted text-center mb-10 max-w-xl mx-auto">
+            61 available coding options for BMW G-series vehicles — all done remotely, all fully reversible.
+          </p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+            {gSeriesCodingOptions.map((option, i) => (
+              <div
+                key={i}
+                className="flex items-start gap-3 bg-card-bg border border-card-border rounded-lg px-4 py-3 hover:border-accent/30 transition-colors duration-200"
+              >
+                <span className="text-accent font-bold text-xs mt-0.5 shrink-0 w-5 text-right">{i + 1}.</span>
+                <span className="text-gray-300 text-sm leading-snug">{option}</span>
+              </div>
+            ))}
+          </div>
+          <div className="mt-10 text-center">
+            <p className="text-muted text-sm mb-4">Don&apos;t see what you&apos;re looking for? Ask us — we code more than what&apos;s listed.</p>
+            <Link
+              href="/contact"
+              className="inline-block bg-accent hover:bg-accent-hover text-white font-bold px-8 py-3 rounded-lg transition-all duration-200 hover:scale-[1.02] accent-glow"
+            >
+              Book a Coding Session
+            </Link>
+          </div>
+        </div>
+      </section>
+
       {/* ── WHAT YOU NEED ── */}
-      <section className="py-12 px-4 bg-background border-y border-white/5">
+      <section className="py-12 px-4 bg-section-bg border-y border-white/5">
         <div className="max-w-4xl mx-auto">
           <p className="text-center text-muted text-sm uppercase tracking-widest mb-6 font-semibold">
             What you&apos;ll need for any remote service
@@ -250,7 +347,7 @@ export default function ServicesPage() {
       </section>
 
       {/* ── FAQ ── */}
-      <section className="py-20 px-4 bg-section-bg">
+      <section className="py-20 px-4 bg-background">
         <div className="max-w-3xl mx-auto">
           <h2 className="text-2xl sm:text-3xl font-bold text-center mb-4">
             Frequently Asked <span className="text-accent">Questions</span>
@@ -272,7 +369,7 @@ export default function ServicesPage() {
       </section>
 
       {/* ── BOTTOM CTA ── */}
-      <section className="py-16 px-4 bg-background">
+      <section className="py-16 px-4 bg-section-bg">
         <div className="max-w-3xl mx-auto text-center">
           <h3 className="text-2xl sm:text-3xl font-bold mb-4">Ready to book?</h3>
           <p className="text-muted mb-8 text-lg">Message us on WhatsApp or send a message — we reply same day.</p>
