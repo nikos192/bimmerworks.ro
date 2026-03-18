@@ -476,15 +476,17 @@ export default function ServicesClient() {
       <section className="py-16 px-4 bg-background">
         <div className="max-w-6xl mx-auto">
 
-          {/* Tab bar */}
-          <div className="flex gap-2 overflow-x-auto pb-3 mb-10" style={{ scrollbarWidth: 'none' }}>
+          {/* Tab bar — 2-col grid on mobile, flex row on sm+ */}
+          <div className="grid grid-cols-2 sm:flex sm:flex-row gap-2 mb-10">
             {tabDefs.map(({ id, label, Icon }) => {
               const isActive = activeTab === id;
               return (
                 <button
                   key={id}
                   onClick={() => setActiveTab(id)}
-                  className={`flex items-center gap-2 px-4 py-2.5 rounded-xl text-sm font-semibold whitespace-nowrap transition-all duration-200 border ${
+                  className={`flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl text-sm font-semibold transition-all duration-200 border sm:shrink-0 sm:whitespace-nowrap ${
+                    id === 'all' ? 'col-span-2 sm:col-span-1' : ''
+                  } ${
                     isActive
                       ? 'bg-accent text-white border-accent shadow-lg'
                       : 'bg-white/5 text-gray-400 border-white/10 hover:bg-white/10 hover:text-white hover:border-white/20'
