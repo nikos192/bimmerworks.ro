@@ -9,6 +9,8 @@ interface Service {
   id: string;
   name: string;
   description: string;
+  smallPrint?: string;
+  featurePills?: string[];
   tags: string[];
   price: string;
   category: Exclude<CategoryId, 'all'>;
@@ -172,6 +174,60 @@ const services: Service[] = [
     category: 'retrofits',
     highlights: ['Airbag fault code removal', 'Seat occupancy coding', 'Required for track builds'],
   },
+  {
+    id: 'ccb-brake-coding',
+    name: 'CCB / M Performance Brake Coding',
+    description: 'Coding for brake system retrofits. Carbon Ceramic (CCB) or M Performance Brakes.',
+    tags: ['All Models'],
+    price: '€125',
+    category: 'retrofits',
+    highlights: ['Carbon Ceramic (CCB) brake coding', 'M Performance brake coding', 'Retrofit coding only — no hardware'],
+  },
+  {
+    id: 'g8x-headlight-retrofits',
+    name: 'G8x Headlight Retrofits',
+    description: 'Laser headlights, LCI headlights, and CS headlights coding.',
+    tags: ['G80 M3', 'G82 M4', 'G83 M4'],
+    price: 'From €125',
+    category: 'retrofits',
+    highlights: ['Laser headlight coding', 'LCI headlight coding', 'CS headlight coding'],
+  },
+  {
+    id: 'f9x-ikon-headlights',
+    name: 'F9x Ikon Headlights',
+    description: 'Ikon headlight retrofit coding and configuration.',
+    tags: ['F90 M5', 'F91 M5 Touring', 'F92 M8', 'F93 M8'],
+    price: '€125',
+    category: 'retrofits',
+    highlights: ['Ikon headlight coding', 'Full retrofit configuration', 'Remote coding session'],
+  },
+  {
+    id: 'g8x-seat-swaps',
+    name: 'G8x Seat Swaps',
+    description: 'Bucket seat to comfort seat swaps and vice versa.',
+    tags: ['G80 M3', 'G82 M4', 'G83 M4'],
+    price: 'Contact for Pricing',
+    category: 'retrofits',
+    highlights: ['Bucket to comfort seat coding', 'Comfort to bucket seat coding', 'Airbag & occupancy recoding'],
+  },
+  {
+    id: 'g8x-lci-steering-wheel',
+    name: 'G8x LCI Steering Wheel Retrofit',
+    description: 'LCI steering wheel with software-controlled heating on iDrive 8.',
+    tags: ['G80 M3', 'G82 M4', 'G83 M4'],
+    price: 'Contact for Pricing',
+    category: 'retrofits',
+    highlights: ['LCI steering wheel coding', 'Software-controlled heating', 'iDrive 8 compatible'],
+  },
+  {
+    id: 'g8x-heated-steering-wheel',
+    name: 'G8x Heated Steering Wheel Retrofit',
+    description: 'Retrofit of Steering Wheel Heat (Option 248) for G8x vehicles.',
+    tags: ['G8x'],
+    price: 'Contact for Pricing',
+    category: 'retrofits',
+    highlights: ['Option 248 activation', 'OEM coding only', 'No hardware replacement required'],
+  },
   // ── OEM SERVICES ──
   {
     id: 'nav-region',
@@ -181,6 +237,17 @@ const services: Service[] = [
     price: '$220 USD',
     category: 'oem',
     highlights: ['Full map & nav region change', 'Latest navigation maps included', 'ROW and ASIA region conversions', 'Ideal for imported BMWs'],
+  },
+  {
+    id: 'basic-diagnostic',
+    name: 'Basic Diagnostic Session',
+    description: 'Basic Diagnostic Remote Session. Read & clear codes. ISTA test plan results will be provided when possible.',
+    smallPrint: '*Additional charges may apply depending on the issue. This service is for a basic diagnostic reading including code clearing.',
+    featurePills: ['✓ Professional Remote Coding', '🕐 30 Minute Session', '⭐ Expert BMW Technician'],
+    tags: ['All Models'],
+    price: 'Contact for Pricing',
+    category: 'oem',
+    highlights: ['Read & clear fault codes', 'ISTA test plan results when possible', 'Remote session — no workshop visit', 'All BMW models supported'],
   },
 ];
 
@@ -369,7 +436,23 @@ function ServiceCard({ service }: { service: Service }) {
       </div>
 
       {/* Description */}
-      <p className="text-gray-400 text-sm leading-relaxed mb-3">{service.description}</p>
+      <p className="text-gray-400 text-sm leading-relaxed mb-2">{service.description}</p>
+
+      {/* Small print */}
+      {service.smallPrint && (
+        <p className="text-xs text-gray-600 italic leading-relaxed mb-3">{service.smallPrint}</p>
+      )}
+
+      {/* Feature pills */}
+      {service.featurePills && service.featurePills.length > 0 && (
+        <div className="flex flex-wrap gap-1.5 mb-3">
+          {service.featurePills.map((pill) => (
+            <span key={pill} className="text-xs text-gray-300 bg-white/5 border border-white/10 rounded-full px-2.5 py-0.5">
+              {pill}
+            </span>
+          ))}
+        </div>
+      )}
 
       {/* Compatibility tags */}
       <div className="flex flex-wrap gap-1.5 mb-4">
