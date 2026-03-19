@@ -71,6 +71,15 @@ const services: Service[] = [
     category: 'performance',
     highlights: ['530 hp / 650 Nm (from stock 510 hp)', 'CS DME flash + full CS coding', 'Transmission · Differential · Steering · Traction · Suspension', 'Anti-Dazzle (US) · ASD · Start/Stop disable (EU)'],
   },
+  {
+    id: 'remote-tunes',
+    name: 'Remote Tunes (Worldwide)',
+    description: 'Performance and software tunes delivered fully remotely — no workshop visit, no shipping required.',
+    tags: ['F Series', 'G Series', 'Worldwide'],
+    price: 'From $190 USD',
+    category: 'performance',
+    highlights: ['100% remote delivery', 'All OEM software', 'Same-day turnaround', 'Worldwide service'],
+  },
   // ── ENHANCEMENTS ──
   {
     id: 'bmw-coding',
@@ -172,15 +181,6 @@ const services: Service[] = [
     price: '$220 USD',
     category: 'oem',
     highlights: ['Full map & nav region change', 'Latest navigation maps included', 'ROW and ASIA region conversions', 'Ideal for imported BMWs'],
-  },
-  {
-    id: 'remote-tunes',
-    name: 'Remote Tunes (Worldwide)',
-    description: 'Performance and software tunes delivered fully remotely — no workshop visit, no shipping required.',
-    tags: ['F Series', 'G Series', 'Worldwide'],
-    price: 'From $190 USD',
-    category: 'oem',
-    highlights: ['100% remote delivery', 'All OEM software', 'Same-day turnaround', 'Worldwide service'],
   },
 ];
 
