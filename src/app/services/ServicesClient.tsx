@@ -23,16 +23,25 @@ const services: Service[] = [
     id: 'pops-bangs',
     name: 'Pops & Bangs Tune',
     description: 'Signature exhaust crackle and pop on overrun. Active on Sport & Sport+ modes — no ECU unlock required.',
-    tags: ['G Series', 'B46 · B48 · B58', 'N63 · S68'],
+    tags: ['F Series', 'G Series', 'B46 · B48 · B58', 'N63 · S68'],
     price: '$300 USD',
     category: 'performance',
     highlights: ['+25 hp · +80 Nm', 'Active on Sport & Sport+ modes', 'No ECU unlock required', 'No warranty void · No dealer flag'],
   },
   {
+    id: 'jcw-burble',
+    name: 'JCW Burble Tunes',
+    description: 'Signature exhaust crackle and pop on overrun. Active on Sport & Sport+ modes — no ECU unlock required.',
+    tags: ['Mini', 'B46 · B48'],
+    price: '$300 USD',
+    category: 'performance',
+    highlights: ['Signature exhaust crackle on overrun', 'Active on Sport & Sport+ modes', 'No ECU unlock required', 'No warranty void · No dealer flag'],
+  },
+  {
     id: 'gpf-delete',
     name: 'GPF / OPF Delete Tune',
     description: 'Remove particulate filter software restrictions for improved exhaust flow and sound. Works on locked ECUs, any production date.',
-    tags: ['G Series', 'F8x', 'Any Production Date'],
+    tags: ['G Series', 'F8x', 'Mini', 'Any Production Date'],
     price: '$200 USD',
     category: 'performance',
     highlights: ['ECU can be locked', 'Any production date', 'All OEM software', 'No warranty void'],
@@ -248,6 +257,33 @@ const services: Service[] = [
     price: 'Contact for Pricing',
     category: 'oem',
     highlights: ['Read & clear fault codes', 'ISTA test plan results when possible', 'Remote session — no workshop visit', 'All BMW models supported'],
+  },
+  {
+    id: 'secure-ncd',
+    name: 'Secure NCD 2.0 Generation',
+    description: 'Generate Secure NCD 2.0 authorisation tokens required for coding certain late-model BMW vehicles.',
+    tags: ['G Series', 'Late Model BMW'],
+    price: 'Contact for Pricing',
+    category: 'oem',
+    highlights: ['NCD 2.0 token generation', 'Required for certain G-series coding', 'Remote process — no tools needed on your end'],
+  },
+  {
+    id: 'replacement-module-coding',
+    name: 'Replacement Module Coding',
+    description: 'Full coding and initialisation of replacement BMW modules — DME, CAS, EGS, FEM, and more.',
+    tags: ['F Series', 'G Series', 'All Models'],
+    price: 'Contact for Pricing',
+    category: 'oem',
+    highlights: ['DME · CAS · EGS · FEM coding', 'Vehicle-specific adaptation', 'Remote coding session'],
+  },
+  {
+    id: 'oem-dme-replacement',
+    name: 'OEM DME Replacement',
+    description: 'Supply and full coding of OEM replacement DME units. Includes vehicle-specific adaptation and initialisation.',
+    tags: ['F Series', 'G Series'],
+    price: 'Contact for Pricing',
+    category: 'oem',
+    highlights: ['OEM DME sourcing', 'Full coding & vehicle adaptation', 'Initialisation included'],
   },
 ];
 
@@ -598,8 +634,27 @@ export default function ServicesClient() {
         </div>
       </section>
 
+      {/* ── MAP UPDATE GUIDE BANNER ── */}
+      <section className="py-8 px-4 bg-section-bg border-y border-white/5">
+        <div className="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+          <div className="flex items-center gap-4">
+            <span className="text-2xl">🗺️</span>
+            <div>
+              <p className="text-white font-semibold text-sm">BMW Map Update via USB</p>
+              <p className="text-muted text-xs">Step-by-step guide to updating your BMW navigation maps at home.</p>
+            </div>
+          </div>
+          <Link
+            href="/map-update"
+            className="shrink-0 inline-flex items-center gap-2 border border-accent/40 text-accent hover:bg-accent hover:text-white text-sm font-semibold px-5 py-2 rounded-lg transition-all duration-200 whitespace-nowrap"
+          >
+            View Guide →
+          </Link>
+        </div>
+      </section>
+
       {/* ── G-SERIES CODING OPTIONS ── */}
-      <section className="py-20 px-4 bg-section-bg">
+      <section className="py-20 px-4 bg-background">
         <div className="max-w-5xl mx-auto">
           <p className="text-accent uppercase tracking-[0.3em] text-xs font-semibold text-center mb-3">BMW Coding</p>
           <h2 className="text-2xl sm:text-3xl font-bold mb-2 text-center">
@@ -632,7 +687,7 @@ export default function ServicesClient() {
       </section>
 
       {/* ── WHAT YOU NEED ── */}
-      <section className="py-12 px-4 bg-background border-y border-white/5">
+      <section className="py-12 px-4 bg-section-bg border-y border-white/5">
         <div className="max-w-4xl mx-auto">
           <p className="text-center text-muted text-sm uppercase tracking-widest mb-6 font-semibold">
             What you&apos;ll need for any remote service
@@ -651,7 +706,7 @@ export default function ServicesClient() {
       </section>
 
       {/* ── FAQ ── */}
-      <section className="py-20 px-4 bg-section-bg">
+      <section className="py-20 px-4 bg-background">
         <div className="max-w-3xl mx-auto">
           <h2 className="text-2xl sm:text-3xl font-bold text-center mb-4">
             Frequently Asked <span className="text-accent">Questions</span>
@@ -675,7 +730,7 @@ export default function ServicesClient() {
       </section>
 
       {/* ── BOTTOM CTA ── */}
-      <section className="py-16 px-4 bg-background">
+      <section className="py-16 px-4 bg-section-bg">
         <div className="max-w-3xl mx-auto text-center">
           <h3 className="text-2xl sm:text-3xl font-bold mb-4">Ready to book?</h3>
           <p className="text-muted mb-8 text-lg">Message us on WhatsApp or send a message — we reply same day.</p>
