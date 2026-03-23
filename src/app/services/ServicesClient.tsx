@@ -15,6 +15,7 @@ interface Service {
   price: string;
   category: Exclude<CategoryId, 'all'>;
   highlights: string[];
+  detailsLink?: string;
 }
 
 const services: Service[] = [
@@ -246,6 +247,16 @@ const services: Service[] = [
     price: '$220 USD',
     category: 'oem',
     highlights: ['Full map & nav region change', 'Latest navigation maps included', 'ROW and ASIA region conversions', 'Ideal for imported BMWs'],
+  },
+  {
+    id: 'map-update',
+    name: 'BMW Map Update via USB',
+    description: 'Update your BMW navigation maps at home using a USB drive. Step-by-step guide included — no dealer visit required.',
+    tags: ['iDrive 6', 'iDrive 7', 'iDrive 8', 'All Regions'],
+    price: 'Contact for Pricing',
+    category: 'oem',
+    highlights: ['USB-based map update', 'Full step-by-step guide provided', 'FSC activation file included', 'No dealer visit required'],
+    detailsLink: '/map-update',
   },
   {
     id: 'basic-diagnostic',
@@ -507,14 +518,27 @@ function ServiceCard({ service }: { service: Service }) {
 
       {/* Buttons — pushed to bottom */}
       <div className="flex flex-col gap-2 mt-auto">
-        <button
-          onClick={() => setExpanded(!expanded)}
-          className="w-full flex items-center gap-2 bg-white/5 hover:bg-white/10 border border-white/10 hover:border-white/20 text-white text-sm font-medium px-4 py-2.5 rounded-lg transition-all duration-200"
-        >
-          <IconEye />
-          <span>{expanded ? 'Hide Details' : 'View Details'}</span>
-          <IconChevron open={expanded} />
-        </button>
+        {service.detailsLink ? (
+          <Link
+            href={service.detailsLink}
+            className="w-full flex items-center gap-2 bg-white/5 hover:bg-white/10 border border-white/10 hover:border-white/20 text-white text-sm font-medium px-4 py-2.5 rounded-lg transition-all duration-200"
+          >
+            <IconEye />
+            <span>View Details</span>
+            <svg className="w-3.5 h-3.5 ml-auto shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+              <path d="M5 12h14M12 5l7 7-7 7" />
+            </svg>
+          </Link>
+        ) : (
+          <button
+            onClick={() => setExpanded(!expanded)}
+            className="w-full flex items-center gap-2 bg-white/5 hover:bg-white/10 border border-white/10 hover:border-white/20 text-white text-sm font-medium px-4 py-2.5 rounded-lg transition-all duration-200"
+          >
+            <IconEye />
+            <span>{expanded ? 'Hide Details' : 'View Details'}</span>
+            <IconChevron open={expanded} />
+          </button>
+        )}
         <Link
           href="/contact"
           className="w-full flex items-center justify-center border border-accent/40 text-accent hover:bg-accent hover:text-white text-sm font-semibold px-4 py-2.5 rounded-lg transition-all duration-200"
@@ -524,7 +548,7 @@ function ServiceCard({ service }: { service: Service }) {
       </div>
 
       {/* Expanded details */}
-      {expanded && (
+      {!service.detailsLink && expanded && (
         <div className="mt-4 pt-4 border-t border-white/10">
           <ul className="space-y-1.5">
             {service.highlights.map((h) => (
@@ -631,25 +655,6 @@ export default function ServicesClient() {
               <ServiceCard key={service.id} service={service} />
             ))}
           </div>
-        </div>
-      </section>
-
-      {/* ── MAP UPDATE GUIDE BANNER ── */}
-      <section className="py-8 px-4 bg-section-bg border-y border-white/5">
-        <div className="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
-          <div className="flex items-center gap-4">
-            <span className="text-2xl">🗺️</span>
-            <div>
-              <p className="text-white font-semibold text-sm">BMW Map Update via USB</p>
-              <p className="text-muted text-xs">Step-by-step guide to updating your BMW navigation maps at home.</p>
-            </div>
-          </div>
-          <Link
-            href="/map-update"
-            className="shrink-0 inline-flex items-center gap-2 border border-accent/40 text-accent hover:bg-accent hover:text-white text-sm font-semibold px-5 py-2 rounded-lg transition-all duration-200 whitespace-nowrap"
-          >
-            View Guide →
-          </Link>
         </div>
       </section>
 
